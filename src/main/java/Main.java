@@ -4,7 +4,7 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		String choice;
-		String inputFile, outputFile, encryptionKey, encryptedFile, decryptedFile, compressedFile, decryptionKey;
+		String inputFile, outputFile, encryptionKey, decryptionKey;
 
 		do {
 			System.out.println("\n--- Menu ---");
@@ -35,16 +35,16 @@ public class Main {
 
 				case "2":
 					System.out.println("Enter the path of the input file:");
-					compressedFile = scanner.nextLine();
+					inputFile = scanner.nextLine();
 
 					System.out.println("Enter the path of the output file:");
-					decryptedFile = scanner.nextLine();
+					outputFile = scanner.nextLine();
 
 					System.out.println("Enter your 16-bit encryption key:");
 					decryptionKey = scanner.nextLine();
 
 					try {
-						Compression.decryptAndDecompressFile(compressedFile, decryptedFile, decryptionKey);
+						Compression.decryptAndDecompressFile(inputFile, outputFile, decryptionKey);
 						System.out.println("File decrypted and decompressed successfully!");
 					} catch (Exception e) {
 						System.out.println("An error occurred: " + e.getMessage());
@@ -59,7 +59,7 @@ public class Main {
 					System.out.println("Invalid choice. Please enter 1, 2, or 3.");
 					break;
 			}
-		} while (!choice.equals("5"));
+		} while (!choice.equals("3"));
 
 		scanner.close();
 	}

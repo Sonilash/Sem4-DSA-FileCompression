@@ -14,5 +14,4 @@ public class HuffmanTree {
 		buildCodeTable(node.right, code + "1", codeTable);
 	}
 
-	// Other Huffman tree related methods can go here
 }

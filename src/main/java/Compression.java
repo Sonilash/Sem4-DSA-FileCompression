@@ -9,12 +9,18 @@ public class Compression {
 			BufferedReader reader = new BufferedReader(new FileReader(inputFile));
 			StringBuilder content = new StringBuilder();
 			String line;
+			MerkleTree merkleTree = new MerkleTree();
 			while ((line = reader.readLine()) != null) {
 				content.append(line);
 				content.append("\n");
+				merkleTree.addTransaction(line);
+
 			}
 			reader.close();
 
+
+			String merkleRoot = merkleTree.computeRoot();
+			content.append(merkleRoot);
 			String encryptedContent = AESEncryption.encrypt(content.toString(), encryptionKey);
 
 			Map<Character, Integer> frequencyMap = new HashMap<>();
@@ -55,19 +61,15 @@ public class Compression {
 
 			DataOutputStream writer = new DataOutputStream(new FileOutputStream(outputFile));
 
-			// Write the size of the code table
 			writer.writeInt(codeTable.size());
 
-			// Write the code table
 			for (Map.Entry<Character, String> entry : codeTable.entrySet()) {
 				writer.writeChar(entry.getKey());
 				writer.writeUTF(entry.getValue());
 			}
 
-			// Write the separator
 			writer.writeUTF("END_OF_CODE_TABLE");
 
-			// Write the compressed content
 			for (char c : compressedContent.toString().toCharArray()) {
 				writer.writeByte(Integer.parseInt(String.valueOf(c), 2));
 			}
@@ -86,7 +88,6 @@ public class Compression {
 			StringBuilder compressedContent = new StringBuilder();
 			Map<String, Character> codeTable = new HashMap<>();
 			String line;
-			boolean readingCodes = true;
 
 			int codeTableSize = reader.readInt();
 
@@ -96,17 +97,12 @@ public class Compression {
 				codeTable.put(value, key);
 			}
 
-			// Read the separator
-			String separator = reader.readUTF();
-
-			// Read the compressed content
 			while (reader.available() > 0) {
 				char c = (char) reader.readByte();
 				compressedContent.append(Integer.toBinaryString(c & 0xFF));
 			}
 			reader.close();
 
-			// Decompress content
 			StringBuilder decompressedContent = new StringBuilder();
 			StringBuilder currentCode = new StringBuilder();
 			for (char c : compressedContent.toString().toCharArray()) {
@@ -117,12 +113,27 @@ public class Compression {
 				}
 			}
 
-			// Decrypt content
 			String decryptedContent = AESEncryption.decrypt(decompressedContent.toString(), encryptionKey);
 
-			// Write decrypted content to output file
+			String extractedMerkleRoot = decryptedContent.substring(decryptedContent.length() - 64);
+			String originalContent = decryptedContent.substring(0, decryptedContent.length() - 64);
+
+			MerkleTree merkleTree = new MerkleTree();
+
+			for (String transaction : originalContent.split("\n")) {
+				merkleTree.addTransaction(transaction);
+			}
+			String computedMerkleRoot = merkleTree.computeRoot();
+
+			if (computedMerkleRoot.equals(extractedMerkleRoot)) {
+				System.out.println("Data is verified!");
+			} else {
+				System.out.println("Data is not verified!");
+				return;
+			}
+
 			BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile));
-			writer.write(decryptedContent);
+			writer.write(originalContent);
 			writer.close();
 
 			System.out.println("File decrypted and decompressed successfully!");
