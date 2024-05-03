@@ -30,45 +30,4 @@ public class AESEncryption {
 			return null;
 		}
 	}
-
-	public static void encryptFile(String inputFile, String outputFile, String encryptionKey) {
-		try {
-			BufferedReader reader = new BufferedReader(new FileReader(inputFile));
-			StringBuilder content = new StringBuilder();
-			String line;
-			while ((line = reader.readLine()) != null) {
-				content.append(line);
-				content.append("\n");
-			}
-			reader.close();
-
-			String encryptedContent = encrypt(content.toString(), encryptionKey);
-
-			DataOutputStream writer = new DataOutputStream(new FileOutputStream(outputFile));
-			writer.writeUTF(encryptedContent);
-			writer.close();
-
-			System.out.println("File encrypted successfully!");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
-	public static void decryptFile(String inputFile, String outputFile, String encryptionKey) {
-		try {
-			DataInputStream reader = new DataInputStream(new FileInputStream(inputFile));
-			String encryptedContent = reader.readUTF();
-			reader.close();
-
-			String decryptedContent = decrypt(encryptedContent, encryptionKey);
-
-			BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile));
-			writer.write(decryptedContent);
-			writer.close();
-
-			System.out.println("File decrypted successfully!");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
 }

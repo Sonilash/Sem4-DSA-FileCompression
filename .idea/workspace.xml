@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3c800bc-a9e2-46b0-8e5c-3d50c5f0e669" name="Changes" comment="" />
+    <list default="true" id="c3c800bc-a9e2-46b0-8e5c-3d50c5f0e669" name="Changes" comment="Huffman Coding and AES Encryption implemented for txt files">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compression.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,6 +40,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "extract.method.default.visibility": "private",
+    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -62,7 +66,25 @@
       <workItem from="1714720878291" duration="51000" />
       <workItem from="1714720937255" duration="3367000" />
       <workItem from="1714751220516" duration="2663000" />
+      <workItem from="1714753907510" duration="999000" />
     </task>
+    <task id="LOCAL-00001" summary="Huffman Coding and AES Encryption implemented for txt files">
+      <option name="closed" value="true" />
+      <created>1714754153923</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1714754153923</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Huffman Coding and AES Encryption implemented for txt files">
+      <option name="closed" value="true" />
+      <created>1714754302743</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1714754302743</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -78,6 +100,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Huffman Coding and AES Encryption implemented for txt files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Huffman Coding and AES Encryption implemented for txt files" />
   </component>
   <component name="com.vaadin.designer2.intellij.settings.SizePresetsSettingsComponent">
     <option name="sizePresets">
