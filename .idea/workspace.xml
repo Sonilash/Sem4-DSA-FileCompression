@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3c800bc-a9e2-46b0-8e5c-3d50c5f0e669" name="Changes" comment="Removed redundant code blocks">
-      <change afterPath="$PROJECT_DIR$/src/GUIApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="c3c800bc-a9e2-46b0-8e5c-3d50c5f0e669" name="Changes" comment="Converted to Maven Project">
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,12 +22,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Sonilash"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Sonilash&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -57,7 +55,7 @@
     "extract.method.default.visibility": "private",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Coding/ASEB/Sem-4/DSA Project/File_compression_and_encryption/src/pom.xml",
+    "last_opened_file_path": "D:/Coding/ASEB/Sem-4/DSA Project/File_compression_and_encryption/pom.xml",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -83,6 +81,7 @@
       <workItem from="1714720937255" duration="3367000" />
       <workItem from="1714751220516" duration="2663000" />
       <workItem from="1714753907510" duration="2260000" />
+      <workItem from="1714756406642" duration="374000" />
     </task>
     <task id="LOCAL-00001" summary="Huffman Coding and AES Encryption implemented for txt files">
       <option name="closed" value="true" />
@@ -108,7 +107,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714755203170</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Converted to Maven Project">
+      <option name="closed" value="true" />
+      <created>1714756470255</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1714756470255</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,7 +135,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Huffman Coding and AES Encryption implemented for txt files" />
     <MESSAGE value="Removed redundant code blocks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed redundant code blocks" />
+    <MESSAGE value="Converted to Maven Project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Converted to Maven Project" />
   </component>
   <component name="com.vaadin.designer2.intellij.settings.SizePresetsSettingsComponent">
     <option name="sizePresets">

@@ -25,7 +25,6 @@
             <artifactId>javafx-fxml</artifactId>
             <version>11</version>
         </dependency>
-        <!-- Add other dependencies as needed -->
     </dependencies>
 
     <build>

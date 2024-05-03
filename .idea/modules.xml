@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/File_compression_and_encryption.iml" filepath="$PROJECT_DIR$/File_compression_and_encryption.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FileCompressionApplication.iml" filepath="$PROJECT_DIR$/FileCompressionApplication.iml" />
     </modules>
   </component>
 </project>
