@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3c800bc-a9e2-46b0-8e5c-3d50c5f0e669" name="Changes" comment="Huffman Coding and AES Encryption implemented for txt files">
+    <list default="true" id="c3c800bc-a9e2-46b0-8e5c-3d50c5f0e669" name="Changes" comment="Removed redundant code blocks">
+      <change afterPath="$PROJECT_DIR$/src/GUIApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compression.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +23,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Sonilash"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="fb6ca508-14fe-4cad-a11e-314a2c363bdd" />
+        <option name="url" value="https://github.com/Sonilash/Sem4-DSA-FileCompression.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -42,6 +57,7 @@
     "extract.method.default.visibility": "private",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/Coding/ASEB/Sem-4/DSA Project/File_compression_and_encryption/src/pom.xml",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -66,7 +82,7 @@
       <workItem from="1714720878291" duration="51000" />
       <workItem from="1714720937255" duration="3367000" />
       <workItem from="1714751220516" duration="2663000" />
-      <workItem from="1714753907510" duration="999000" />
+      <workItem from="1714753907510" duration="2260000" />
     </task>
     <task id="LOCAL-00001" summary="Huffman Coding and AES Encryption implemented for txt files">
       <option name="closed" value="true" />
@@ -84,7 +100,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714754302743</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Removed redundant code blocks">
+      <option name="closed" value="true" />
+      <created>1714755203170</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714755203170</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -103,7 +127,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Huffman Coding and AES Encryption implemented for txt files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Huffman Coding and AES Encryption implemented for txt files" />
+    <MESSAGE value="Removed redundant code blocks" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed redundant code blocks" />
   </component>
   <component name="com.vaadin.designer2.intellij.settings.SizePresetsSettingsComponent">
     <option name="sizePresets">
