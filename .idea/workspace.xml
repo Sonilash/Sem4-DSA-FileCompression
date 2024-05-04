@@ -4,19 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3c800bc-a9e2-46b0-8e5c-3d50c5f0e669" name="Changes" comment="Reorganized project to Maven format">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MerkleTree.java" afterDir="false" />
+    <list default="true" id="c3c800bc-a9e2-46b0-8e5c-3d50c5f0e669" name="Changes" comment="Added Merkle Tree for data integrity verification">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/File_compression_and_encryption/AESEncryption.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/File_compression_and_encryption/Compression.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/File_compression_and_encryption/HuffmanNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/File_compression_and_encryption/HuffmanTree.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/File_compression_and_encryption/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AESEncryption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AESEncryption.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Compression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Compression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FileCompressionApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FileCompressionApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/compressed.bin" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/compressed.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/decompressed.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/decompressed.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +62,7 @@
     "extract.method.default.visibility": "private",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Coding/ASEB/Sem-4/DSA Project/File_compression_and_encryption/pom.xml",
+    "last_opened_file_path": "D:/Coding/ASEB/Sem-4/DSA Project/File_compression_and_encryption",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -79,7 +71,7 @@
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "settings.sync",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -104,7 +96,11 @@
       <workItem from="1714720937255" duration="3367000" />
       <workItem from="1714751220516" duration="2663000" />
       <workItem from="1714753907510" duration="2260000" />
-      <workItem from="1714756406642" duration="4957000" />
+      <workItem from="1714756406642" duration="5291000" />
+      <workItem from="1714790442477" duration="512000" />
+      <workItem from="1714790963403" duration="709000" />
+      <workItem from="1714797007498" duration="323000" />
+      <workItem from="1714800251455" duration="463000" />
     </task>
     <task id="LOCAL-00001" summary="Huffman Coding and AES Encryption implemented for txt files">
       <option name="closed" value="true" />
@@ -146,7 +142,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714757268487</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added Merkle Tree for data integrity verification">
+      <option name="closed" value="true" />
+      <created>1714761695965</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1714761695965</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,7 +172,8 @@
     <MESSAGE value="Removed redundant code blocks" />
     <MESSAGE value="Converted to Maven Project" />
     <MESSAGE value="Reorganized project to Maven format" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reorganized project to Maven format" />
+    <MESSAGE value="Added Merkle Tree for data integrity verification" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Merkle Tree for data integrity verification" />
   </component>
   <component name="com.vaadin.designer2.intellij.settings.SizePresetsSettingsComponent">
     <option name="sizePresets">

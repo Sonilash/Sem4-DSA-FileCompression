@@ -14,10 +14,8 @@ public class Compression {
 				content.append(line);
 				content.append("\n");
 				merkleTree.addTransaction(line);
-
 			}
 			reader.close();
-
 
 			String merkleRoot = merkleTree.computeRoot();
 			content.append(merkleRoot);
@@ -68,16 +66,14 @@ public class Compression {
 				writer.writeUTF(entry.getValue());
 			}
 
-			writer.writeUTF("END_OF_CODE_TABLE");
-
 			for (char c : compressedContent.toString().toCharArray()) {
-				writer.writeByte(Integer.parseInt(String.valueOf(c), 2));
+				writer.writeChar(c);
 			}
 
 			writer.close();
 
 			System.out.println("File compressed and encrypted successfully!");
-		} catch (IOException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -87,7 +83,6 @@ public class Compression {
 			DataInputStream reader = new DataInputStream(new FileInputStream(inputFile));
 			StringBuilder compressedContent = new StringBuilder();
 			Map<String, Character> codeTable = new HashMap<>();
-			String line;
 
 			int codeTableSize = reader.readInt();
 
@@ -98,8 +93,7 @@ public class Compression {
 			}
 
 			while (reader.available() > 0) {
-				char c = (char) reader.readByte();
-				compressedContent.append(Integer.toBinaryString(c & 0xFF));
+				compressedContent.append(reader.readChar());
 			}
 			reader.close();
 
@@ -137,8 +131,7 @@ public class Compression {
 			writer.close();
 
 			System.out.println("File decrypted and decompressed successfully!");
-		} catch (IOException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
-}
+	}}

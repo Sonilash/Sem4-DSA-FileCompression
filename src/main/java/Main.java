@@ -22,7 +22,7 @@ public class Main {
 					System.out.println("Enter the path of the output file:");
 					outputFile = scanner.nextLine();
 
-					System.out.println("Enter your 16-biy encryption key:");
+					System.out.println("Enter your 16-bit encryption key:");
 					encryptionKey = scanner.nextLine();
 
 					try {
