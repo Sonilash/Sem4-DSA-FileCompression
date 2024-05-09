@@ -1,5 +1,8 @@
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Base64;
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
@@ -29,4 +32,11 @@ public class AESEncryption {
 		byte[] decryptedBytes = cipher.doFinal(Base64.getDecoder().decode(encryptedContent));
 		return new String(decryptedBytes, StandardCharsets.UTF_8);
 	}
+
+	public static void encryptFile(String filePath, String AES_KEY) throws Exception {
+		String content = new String(Files.readAllBytes(Paths.get(filePath)), StandardCharsets.UTF_8);
+		String encryptedContent = AESEncryption.encrypt(content, AES_KEY);
+		Files.write(Paths.get(filePath), encryptedContent.getBytes(StandardCharsets.UTF_8));
+	}
+
 }

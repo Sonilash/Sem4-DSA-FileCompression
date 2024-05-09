@@ -1,4 +1,6 @@
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
@@ -57,7 +59,7 @@ public class Compression {
 				compressedContent.append(codeTable.get(c));
 			}
 
-			DataOutputStream writer = new DataOutputStream(new FileOutputStream(outputFile));
+			DataOutputStream writer = new DataOutputStream(Files.newOutputStream(Paths.get(outputFile)));
 
 			writer.writeInt(codeTable.size());
 
@@ -71,8 +73,6 @@ public class Compression {
 			}
 
 			writer.close();
-
-			System.out.println("File compressed and encrypted successfully!");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -80,7 +80,7 @@ public class Compression {
 
 	public static void decryptAndDecompressFile(String inputFile, String outputFile, String encryptionKey) {
 		try {
-			DataInputStream reader = new DataInputStream(new FileInputStream(inputFile));
+			DataInputStream reader = new DataInputStream(Files.newInputStream(Paths.get(inputFile)));
 			StringBuilder compressedContent = new StringBuilder();
 			Map<String, Character> codeTable = new HashMap<>();
 
@@ -129,8 +129,6 @@ public class Compression {
 			BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile));
 			writer.write(originalContent);
 			writer.close();
-
-			System.out.println("File decrypted and decompressed successfully!");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
