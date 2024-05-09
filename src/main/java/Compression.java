@@ -68,11 +68,40 @@ public class Compression {
 				writer.writeUTF(entry.getValue());
 			}
 
+			int buffer = 0;
+			int bufferCounter = 0;
+
 			for (char c : compressedContent.toString().toCharArray()) {
-				writer.writeChar(c);
+				buffer = (buffer << 1) | (c - '0');
+				bufferCounter++;
+
+				if (bufferCounter == 8) {
+					writer.writeByte(buffer);
+					buffer = 0;
+					bufferCounter = 0;
+				}
+			}
+			if (bufferCounter > 0) {
+				buffer <<= (8 - bufferCounter);
+			}
+			writer.writeByte(bufferCounter);
+			writer.writeByte(buffer);
+			writer.close();
+
+			int codeTableSize = 0;
+			for (Map.Entry<Character, String> entry : codeTable.entrySet()) {
+				codeTableSize += Character.BYTES; // size of the character
+				codeTableSize += entry.getValue().length() * Byte.BYTES; // size of the Huffman code
 			}
 
-			writer.close();
+			int merkleRootSize = 64 * Character.BYTES;
+
+			int paddingSize = 1;
+
+			int totalOverheadSize = codeTableSize + merkleRootSize + paddingSize;
+
+			System.out.println("Total overhead size: " + totalOverheadSize + " bytes");
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -91,10 +120,25 @@ public class Compression {
 				String value = reader.readUTF();
 				codeTable.put(value, key);
 			}
-
-			while (reader.available() > 0) {
-				compressedContent.append(reader.readChar());
+			int nextByte;
+			int lastByteValidBits = 8;
+			while (reader.available() > 2) {
+				nextByte = reader.readByte() & 0xFF;
+				for (int i = 7; i >= 0; i--) {
+					int bit = (nextByte >> i) & 1;
+					compressedContent.append(bit);
+				}
 			}
+			if (reader.available() > 1) {
+				lastByteValidBits = reader.readByte();
+				nextByte = reader.readByte() & 0xFF;
+				for (int i = 7; i >= 8 - lastByteValidBits; i--) {
+					int bit = (nextByte >> i) & 1;
+					compressedContent.append(bit);
+				}
+			}
+
+
 			reader.close();
 
 			StringBuilder decompressedContent = new StringBuilder();
@@ -132,4 +176,5 @@ public class Compression {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}}
+	}
+}

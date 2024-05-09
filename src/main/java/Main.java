@@ -17,16 +17,20 @@ public class Main {
 			switch (choice) {
 				case "1":
 					System.out.println("Enter the path of the input file:");
-					inputFile = scanner.nextLine();
+//					inputFile = scanner.nextLine();
+					inputFile = "D:\\Coding\\ASEB\\Sem-4\\DSA Project\\File_compression_and_encryption\\src\\main\\resources\\sample.txt";
 
 					System.out.println("Enter the path of the output file:");
-					outputFile = scanner.nextLine();
+//					outputFile = scanner.nextLine();
+					outputFile = "D:\\Coding\\ASEB\\Sem-4\\DSA Project\\File_compression_and_encryption\\src\\main\\resources\\compressed.bin";
 
 					System.out.println("Enter your 16-bit encryption key:");
-					encryptionKey = scanner.nextLine();
+//					encryptionKey = scanner.nextLine();
+					encryptionKey = "1234567890123456";
 
 					try {
 						Compression.compressAndEncryptFile(inputFile, outputFile, encryptionKey);
+//						AESEncryption.encryptFile(inputFile, encryptionKey);
 						System.out.println("File compressed and encrypted successfully!");
 					} catch (Exception e) {
 						System.out.println("An error occurred: " + e.getMessage());
@@ -35,13 +39,17 @@ public class Main {
 
 				case "2":
 					System.out.println("Enter the path of the input file:");
-					inputFile = scanner.nextLine();
+//					inputFile = scanner.nextLine();
+					inputFile = "D:\\Coding\\ASEB\\Sem-4\\DSA Project\\File_compression_and_encryption\\src\\main\\resources\\compressed.bin";
+
 
 					System.out.println("Enter the path of the output file:");
-					outputFile = scanner.nextLine();
+//					outputFile = scanner.nextLine();
+					outputFile = "D:\\Coding\\ASEB\\Sem-4\\DSA Project\\File_compression_and_encryption\\src\\main\\resources\\decompressed.txt";
 
 					System.out.println("Enter your 16-bit encryption key:");
-					decryptionKey = scanner.nextLine();
+//					decryptionKey = scanner.nextLine();
+					decryptionKey = "1234567890123456";
 
 					try {
 						Compression.decryptAndDecompressFile(inputFile, outputFile, decryptionKey);
