@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3c800bc-a9e2-46b0-8e5c-3d50c5f0e669" name="Changes" comment="Added Merkle Tree for data integrity verification">
+    <list default="true" id="c3c800bc-a9e2-46b0-8e5c-3d50c5f0e669" name="Changes" comment="Modified to encrypt data after compression">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AESEncryption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AESEncryption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Compression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Compression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/decompressed.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/decompressed.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AESEncryption.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AESEncryption.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,12 +16,20 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JavaFXApplication" />
+        <option value="Class" />
       </list>
     </option>
   </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="origin/master" />
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Bit-IO-Stream" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -33,14 +38,12 @@
     &quot;assignee&quot;: &quot;Sonilash&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="fb6ca508-14fe-4cad-a11e-314a2c363bdd" />
-        <option name="url" value="https://github.com/Sonilash/Sem4-DSA-FileCompression.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Sonilash/Sem4-DSA-FileCompression.git&quot;,
+    &quot;accountId&quot;: &quot;fb6ca508-14fe-4cad-a11e-314a2c363bdd&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -52,29 +55,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.FileCompressionApplication.executor": "Run",
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "extract.method.default.visibility": "private",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Coding/ASEB/Sem-4/DSA Project/File_compression_and_encryption",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.FileCompressionApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainGUI.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main_GUI.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Bit-IO-Stream&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Coding/ASEB/Sem-4/DSA Project/File_compression_and_encryption&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Coding\ASEB\Sem-4\DSA Project\File_compression_and_encryption\src\main\resources" />
@@ -82,6 +87,34 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
+  </component>
+  <component name="RunManager" selected="Application.Main_GUI">
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="FileCompressionApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main_GUI" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="MainGUI" />
+      <module name="FileCompressionApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main_GUI" />
+      <item itemvalue="Application.Main" />
+    </list>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -100,7 +133,18 @@
       <workItem from="1714790442477" duration="512000" />
       <workItem from="1714790963403" duration="709000" />
       <workItem from="1714797007498" duration="323000" />
-      <workItem from="1714800251455" duration="463000" />
+      <workItem from="1714800251455" duration="601000" />
+      <workItem from="1714811979970" duration="1265000" />
+      <workItem from="1715151510204" duration="696000" />
+      <workItem from="1715225355238" duration="1390000" />
+      <workItem from="1715252860251" duration="540000" />
+      <workItem from="1715253538553" duration="16889000" />
+      <workItem from="1715272978956" duration="232000" />
+      <workItem from="1715273223021" duration="6225000" />
+      <workItem from="1715311078703" duration="8949000" />
+      <workItem from="1715322059021" duration="2353000" />
+      <workItem from="1715324495708" duration="3625000" />
+      <workItem from="1715349192211" duration="969000" />
     </task>
     <task id="LOCAL-00001" summary="Huffman Coding and AES Encryption implemented for txt files">
       <option name="closed" value="true" />
@@ -150,7 +194,47 @@
       <option name="project" value="LOCAL" />
       <updated>1714761695965</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Debugging - Read/Write from Binary file working">
+      <option name="closed" value="true" />
+      <created>1714800801262</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1714800801262</updated>
+    </task>
+    <task id="LOCAL-00008" summary=".">
+      <option name="closed" value="true" />
+      <created>1715259841261</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1715259841261</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Modified binary file read/write logic to store compressed content bitwise">
+      <option name="closed" value="true" />
+      <created>1715272776288</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1715272776288</updated>
+    </task>
+    <task id="LOCAL-00010" summary=".">
+      <option name="closed" value="true" />
+      <created>1715315902324</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1715315902324</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Modified to encrypt data after compression">
+      <option name="closed" value="true" />
+      <created>1715327301478</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1715327301478</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,7 +257,11 @@
     <MESSAGE value="Converted to Maven Project" />
     <MESSAGE value="Reorganized project to Maven format" />
     <MESSAGE value="Added Merkle Tree for data integrity verification" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Merkle Tree for data integrity verification" />
+    <MESSAGE value="Debugging - Read/Write from Binary file working" />
+    <MESSAGE value="Modified binary file read/write logic to store compressed content bitwise" />
+    <MESSAGE value="." />
+    <MESSAGE value="Modified to encrypt data after compression" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified to encrypt data after compression" />
   </component>
   <component name="com.vaadin.designer2.intellij.settings.SizePresetsSettingsComponent">
     <option name="sizePresets">
