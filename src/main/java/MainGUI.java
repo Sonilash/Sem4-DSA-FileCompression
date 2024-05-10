@@ -23,13 +23,17 @@ public class MainGUI {
 		exitButton.setMaximumSize(maxDimension);
 
 
-
 		compressButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String inputFile = getInputTextFile();
 				String outputFile = getOutputBinFile();
 				String encryptionKey = getEncryptionKey();
+
+				if (inputFile == null || outputFile == null || encryptionKey == null) {
+					JOptionPane.showMessageDialog(frame, "Operation cancelled by user.");
+					return;
+				}
 
 				try {
 					Compression.compressAndEncryptFile(inputFile, outputFile, encryptionKey);
@@ -46,6 +50,11 @@ public class MainGUI {
 				String inputFile = getInputBinaryFile();
 				String outputFile = getOutputTextFile();
 				String encryptionKey = getEncryptionKey();
+
+				if (inputFile == null || outputFile == null || encryptionKey == null) {
+					JOptionPane.showMessageDialog(frame, "Operation cancelled by user.");
+					return;
+				}
 
 				try {
 					Compression.decryptAndDecompressFile(inputFile, outputFile, encryptionKey);
@@ -78,7 +87,7 @@ public class MainGUI {
 		frame.setVisible(true);
 	}
 
-	public static String getInputTextFile(){
+	public static String getInputTextFile() {
 		JFileChooser jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
 		jfc.setDialogTitle("Select Input File");
 
@@ -94,7 +103,7 @@ public class MainGUI {
 		return null;
 	}
 
-	public static String getOutputBinFile(){
+	public static String getOutputBinFile() {
 		JFileChooser jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
 		jfc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 		jfc.setDialogTitle("Select Output Directory");
@@ -107,11 +116,11 @@ public class MainGUI {
 		return null;
 	}
 
-	public static String getEncryptionKey(){
+	public static String getEncryptionKey() {
 		return JOptionPane.showInputDialog("Enter your 16-bit encryption key:");
 	}
 
-	public static String getInputBinaryFile(){
+	public static String getInputBinaryFile() {
 		JFileChooser jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
 		jfc.setDialogTitle("Select Input Binary File");
 
@@ -127,7 +136,7 @@ public class MainGUI {
 		return null;
 	}
 
-	public static String getOutputTextFile(){
+	public static String getOutputTextFile() {
 		JFileChooser jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
 		jfc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 		jfc.setDialogTitle("Select Output Directory");
@@ -135,7 +144,7 @@ public class MainGUI {
 		if (returnValue == JFileChooser.APPROVE_OPTION) {
 			String directoryPath = jfc.getSelectedFile().getAbsolutePath();
 			String fileName = JOptionPane.showInputDialog("Enter the output file name:");
-			if(!fileName.toLowerCase().endsWith(".txt")) {
+			if (!fileName.toLowerCase().endsWith(".txt")) {
 				fileName += ".txt";
 			}
 			return directoryPath + File.separator + fileName;
