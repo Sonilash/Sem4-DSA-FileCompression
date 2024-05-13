@@ -27,10 +27,19 @@ public class MainGUI {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String inputFile = getInputTextFile();
-				String outputFile = getOutputBinFile();
-				String encryptionKey = getEncryptionKey();
+				if (inputFile.isEmpty()) {
+					JOptionPane.showMessageDialog(frame, "Operation cancelled by user.");
+					return;
+				}
 
-				if (inputFile == null || outputFile == null || encryptionKey == null) {
+				String outputFile = getOutputBinFile();
+				if (outputFile.isEmpty()) {
+					JOptionPane.showMessageDialog(frame, "Operation cancelled by user.");
+					return;
+				}
+
+				String encryptionKey = getEncryptionKey();
+				if (encryptionKey.isEmpty()) {
 					JOptionPane.showMessageDialog(frame, "Operation cancelled by user.");
 					return;
 				}
@@ -48,10 +57,19 @@ public class MainGUI {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String inputFile = getInputBinaryFile();
-				String outputFile = getOutputTextFile();
-				String encryptionKey = getEncryptionKey();
+				if (inputFile.isEmpty()) {
+					JOptionPane.showMessageDialog(frame, "Operation cancelled by user.");
+					return;
+				}
 
-				if (inputFile == null || outputFile == null || encryptionKey == null) {
+				String outputFile = getOutputTextFile();
+				if (outputFile.isEmpty()) {
+					JOptionPane.showMessageDialog(frame, "Operation cancelled by user.");
+					return;
+				}
+
+				String encryptionKey = getEncryptionKey();
+				if (encryptionKey.isEmpty()) {
 					JOptionPane.showMessageDialog(frame, "Operation cancelled by user.");
 					return;
 				}
@@ -72,18 +90,15 @@ public class MainGUI {
 			}
 		});
 
-		// Add buttons to JFrame
 		frame.add(compressButton);
 		frame.add(decompressButton);
 		frame.add(exitButton);
 
-		// Set the default operation to exit when the window is closed
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		// Set the size of the JFrame
-		frame.setSize(300, 200);
-
-		// Make the JFrame visible
+		frame.setSize(500, 300);
+		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+		frame.setLocation(dim.width / 2 - frame.getSize().width / 2, dim.height / 2 - frame.getSize().height / 2);
 		frame.setVisible(true);
 	}
 
@@ -93,14 +108,15 @@ public class MainGUI {
 
 		jfc.setFileSelectionMode(JFileChooser.FILES_ONLY);
 
-		FileNameExtensionFilter filter = new FileNameExtensionFilter("TEXT FILES", "txt", "text");
+		FileNameExtensionFilter filter = new FileNameExtensionFilter("Text Files",
+				"txt", "text", "csv", "tsv", "log");
 		jfc.setFileFilter(filter);
 
 		int returnValue = jfc.showOpenDialog(null);
 		if (returnValue == JFileChooser.APPROVE_OPTION) {
 			return jfc.getSelectedFile().getAbsolutePath();
 		}
-		return null;
+		return "";
 	}
 
 	public static String getOutputBinFile() {
@@ -111,13 +127,20 @@ public class MainGUI {
 		if (returnValue == JFileChooser.APPROVE_OPTION) {
 			String directoryPath = jfc.getSelectedFile().getAbsolutePath();
 			String fileName = JOptionPane.showInputDialog("Enter the output file name:");
+			if (fileName == null) {
+				return "";
+			}
 			return directoryPath + File.separator + fileName + ".bin";
 		}
-		return null;
+		return "";
 	}
 
 	public static String getEncryptionKey() {
-		return JOptionPane.showInputDialog("Enter your 16-bit encryption key:");
+		String key = JOptionPane.showInputDialog("Enter your 16-bit encryption key:");
+		if (key == null) {
+			return "";
+		}
+		return key;
 	}
 
 	public static String getInputBinaryFile() {
@@ -126,14 +149,14 @@ public class MainGUI {
 
 		jfc.setFileSelectionMode(JFileChooser.FILES_ONLY);
 
-		FileNameExtensionFilter filter = new FileNameExtensionFilter("BIN FILES", "bin");
+		FileNameExtensionFilter filter = new FileNameExtensionFilter("Binary Files", "bin");
 		jfc.setFileFilter(filter);
 
 		int returnValue = jfc.showOpenDialog(null);
 		if (returnValue == JFileChooser.APPROVE_OPTION) {
 			return jfc.getSelectedFile().getAbsolutePath();
 		}
-		return null;
+		return "";
 	}
 
 	public static String getOutputTextFile() {
@@ -144,11 +167,14 @@ public class MainGUI {
 		if (returnValue == JFileChooser.APPROVE_OPTION) {
 			String directoryPath = jfc.getSelectedFile().getAbsolutePath();
 			String fileName = JOptionPane.showInputDialog("Enter the output file name:");
+			if (fileName == null) {
+				return "";
+			}
 			if (!fileName.toLowerCase().endsWith(".txt")) {
 				fileName += ".txt";
 			}
 			return directoryPath + File.separator + fileName;
 		}
-		return null;
+		return "";
 	}
 }

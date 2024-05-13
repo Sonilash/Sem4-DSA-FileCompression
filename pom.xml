@@ -5,7 +5,7 @@
 
     <groupId>org.amrita.2022CSE</groupId>
     <artifactId>FileCompressionApplication</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -47,11 +47,13 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>org.amrita.2022CSE.FileCompressionApplication.Main</mainClass>
+                            <mainClass>org.amrita.2022CSE.FileCompressionApplication.MainGUI</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
             </plugin>
+
+
         </plugins>
     </build>
 </project>
