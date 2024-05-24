@@ -136,13 +136,18 @@ public class MainGUI {
 	}
 
 	public static String getEncryptionKey() {
-		String key = JOptionPane.showInputDialog("Enter your 16-bit encryption key:");
-		if (key == null) {
-			return "";
-		}
-		return key;
-	}
-
+    while (true) {
+        String key = JOptionPane.showInputDialog("Enter your 16, 24 or 32 byte encryption key:");
+        if (key == null) {
+            return "";
+        }
+        if (key.getBytes().length == 16 || key.getBytes().length == 24 || key.getBytes().length == 32) {
+            return key;
+        } else {
+            JOptionPane.showMessageDialog(null, "Invalid key length. Please enter a 16, 24 or 32 byte key.");
+        }
+    }
+}
 	public static String getInputBinaryFile() {
 		JFileChooser jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
 		jfc.setDialogTitle("Select Input Binary File");
